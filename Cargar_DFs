@@ -1,0 +1,12 @@
+#Cargar distintas bases de datos
+install.packages("foreign")
+library(foreign)
+#Este paquete permite importar bases de datos de:
+#'Minitab', 'S', 'SAS', 'SPSS', 'Stata', 'Systat', 'Weka', 'dBase', y más
+#aclarar la el directorio de trabajo
+#si se trabaja con project no es necesario
+setwd('C:/Users/user/Desktop/Bucaramanga') 
+#Llamar directamente por nombre de archivo
+DF<-read.spss("datos.sav", to.data.frame=TRUE)
+#Guardar imagen en el directorio de trabajo 
+tiff("correlacion.tif",width=1480,height=1748,units="px",res=300)
