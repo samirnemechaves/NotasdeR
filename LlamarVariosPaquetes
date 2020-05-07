@@ -1,0 +1,14 @@
+#función ipak para instalar y llamar a varios paquetes a la vez
+
+ipak <- function(pkg){
+  new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+  if (length(new.pkg)) 
+    install.packages(new.pkg, dependencies = TRUE)
+  sapply(pkg, require, character.only = TRUE)
+}
+
+# crear la lista de los paquetes a utilizar paquetes clave
+packages <- c("foreign","PerformanceAnalytics","psych","corrr", "ggplot", "gganimate", "ggstatsplot", "lavaan", "metafor", "apaTables", 
+"apa", "tydytext", "Igraph", "harrypotter)
+#Llamarlos
+ipak(packages)
