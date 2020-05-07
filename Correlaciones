@@ -1,0 +1,6 @@
+#crear un objeto que sea la propia matriz de correlaciones
+correlac<-cor(df2)
+#crear directamente la tabla de correlaciones en APA en formato word
+apa.cor.table(df2, filename = "chupitoR.doc", table.number = 2,show.conf.interval = FALSE, landscape = TRUE)
+#crear figura de correlaciones con histograma, diagrama de puntos.
+pairs.panels(df2, pch=20,stars=TRUE,main="Titulo")
